@@ -11,7 +11,6 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,8 +28,8 @@
     </header>
     <container>
     <div class="card" style="width: 500px;">
-        <div class="card-body">
-          <div id="openingText"></div>
+        <div class="card-body center-text">
+          <div id="openingText">
           <h5 class="card-title">Coding Quiz</h5>
           <h6 class="card-subtitle mb-2 text-muted">Test Your Might!</h6>
           <p class="card-text">You will have 120 seconds to answer the following 5 questions correctly.  
@@ -39,7 +38,7 @@
           </p>
           <br>
           <button id="startBtn" type="button"  class="btn btn-primary btn-lg">Start the Quiz!</button>
-          <hr>
+          </div>
           </div>
         </div>
 
@@ -86,9 +85,7 @@
       </div>
     </div>
 
-      <script>
-      
-      //this array will contain all questions, options and correct answers
+    <script>
       var quizQuestions = [
         {
           question:  "What does NaN stand for?",
@@ -175,15 +172,18 @@
     startOverBtn.addEventListener("click", startOver);
 
     var question = document.getElementById("question");
+
     var option1 = document.querySelector("#option1");
     option1.addEventListener("click", manageQuizQuestion);
+
     var option2 = document.querySelector("#option2");
     option2.addEventListener("click", manageQuizQuestion);
+
     var option3 = document.querySelector("#option3");
     option3.addEventListener("click", manageQuizQuestion);
+
     var option4 = document.getElementById("#option4");
     option4.addEventListener("click", manageQuizQuestion)
-    //option 4
 
     var rightAnswers=0;
     var wrongAnswers=0;
