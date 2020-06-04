@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Code Quiz!</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,42 +33,76 @@
           <h5 class="card-title">Coding Quiz</h5>
           <h6 class="card-subtitle mb-2 text-muted">Test Your Might!</h6>
           <p class="card-text">You will have 120 seconds to answer the following 5 questions correctly.  If you get a question wrong, we will subtract 25 seconds from the clock!  Don’t forget to input your initials at the end to see if you can make it to the top of the leaderboard! 
-            </p>
-            <br>
-            <p class="card-text">Best of Luck,</p> 
-            <p class="card-text">Jared</p> 
+          </p>
+          <br>
+          <p class="card-text">Best of Luck,</p> 
+          <p class="card-text">Jared</p> 
           <a href="#" class="btn btn-primary">Start the Quiz!</a> 
         </div>
       </div>
-      <p>Question 1:  What does NaN stand for?
-        A.  Nuns and Ninjas, LLC
-        B.  Non-Asynchronous 
-        C.  Nano Coding
-        D.  Not a Number
-        
-        Question 2:  What is the data type called that holds 2 possible values: true or false?
-        A.  Int
-        B.  String
-        C.  Boolean
-        D.  Double
-        
-        Question 3:  What is it called when you write a function, but you have not yet executed it?
-        A.  A Function Definition
-        B.  Mal-Function Junction
-        C.  My quiz is too difficult
-        D.  A living function
-        
-        Question 4:  What are the 3 programming languages we commonly use in front-end web development?
-        A.  Java, CSS, HTML
-        B. JavaScript, Rosetta Stone, Hooked on Phonics
-        C. jSquirrely, Var num’s Lang, CSS
-        D. HTML, CSS, JavaScript
-        
-        Question 5:  How many interviews did Wayne say he went through after bootcamp before landing a job?
-        A.  < 10
-        B.  < 15
-        C.  < 20
-        </p>
+      <div id="quiz"></div>
+      <div id="results"></div>
+      <div id="submit"></div>
+
+      <script>
+      const quizContainer = document.getElementById('quiz');
+      const resultsContainer = document.getElementById('results');
+      const submitButton = document.getElementById('submit');
+      
+      //this array will contain all questions, options and correct answers
+      var quizQuestions = [
+        {
+          question:  "What does NaN stand for?",
+          answers: {
+        a:  "Nuns and Ninjas, LLC",
+        b:  "Non-Asynchronous", 
+        c:  "Nano Coding",
+        d:  "Not a Number"
+          },
+          correctAnswer: "d"
+        },  
+        {
+          question:  "What is the data type called that holds 2 possible values: true or false?",
+          answers: { 
+        a:  "Int",
+        b:  "String",
+        c:  "Boolean",
+        d:  "Double"
+          },
+          correctAnswer: "c"
+        },
+        {
+          question:  "What is it called when you write a function, but you have not yet executed it?",
+          answers: {        
+        a:  "A Function Definition",
+        b:  "Mal-Function Junction",
+        c:  "My quiz is too difficult",
+        d:  "A living function"
+          },
+          correctAnswer: "a"
+        },
+        {    
+          question:  "What are the 3 programming languages we commonly use in front-end web development?",
+          answers: {      
+        a: "Java, CSS, HTML",
+        b: "JavaScript, Rosetta Stone, Hooked on Phonics",
+        c: "jSquirrely, Var num’s Lang, CSS",
+        d: "HTML, CSS, JavaScript"
+          },
+          correctAnswer: "d"
+        },
+        {
+          question: "How many interviews did Wayne say he went through after bootcamp before landing a job?",
+          answers: {  
+        a:  "< 10",
+        b:  "< 15",
+        c:  "< 20",
+        d:  "30"
+          },
+          correctAnswer: "d"
+        }
+      ];
+      </script>
     </container>
 </body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
