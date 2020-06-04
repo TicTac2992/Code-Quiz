@@ -35,15 +35,56 @@
           <h6 class="card-subtitle mb-2 text-muted">Test Your Might!</h6>
           <p class="card-text">You will have 120 seconds to answer the following 5 questions correctly.  
             If you get a question wrong, we will subtract 25 seconds from the clock!  
-            Don’t forget to input your initials at the end to see if you can make it into the top of the leaderboard! 
+            Don’t forget to input your initials at the end to see if you've made it into the top of the leaderboard! 
           </p>
           <br>
           <button id="startBtn" type="button"  class="btn btn-primary btn-lg">Start the Quiz!</button>
           <hr>
           </div>
+        </div>
+
           <div id="timer"></div>
-          <div id="quizText">
+          <div id="quizText"></div>
+
           <div id="question">
+            What does NaN stand for?
+          </div>
+          <br>
+          <br>
+          <button id="option1" type="button" class="btn btn-outline-info" value='a'>Nuns and Ninjas, LLC</button>
+          <br>
+          <button id="option2" type="button" class="btn btn-outline-info" value='b'>Non-Asynchronous</button>
+          <br>
+          <button id="option3" type="button" class="btn btn-outline-info" value='c'>Nano Coding</button>
+          <br>
+          <button id="option4" type="button" class="btn btn-outline-info" value='d'>Not a Number</button>
+          <hr>
+        </div>
+
+        <div id="highScore">
+          <h1> High Score</h1>
+          <h2>Your high score is: <span id= "yourScore"></span></h2>
+          <form method="POST">
+            <div class="input-group">
+              <label for="yourInitials">Enter your initials: </label> <input type="text"  id="initials"/>
+            </div>
+            <button id="highScoreSubmit" type="button">Submit</button>
+          </form>
+         <br>   
+          <button id="startOverBtn" type="button" class="btn btn-primary btn-lg">Go Again!</button>
+          <hr>
+        </div>
+
+        <div id="feedback"></div>
+
+        <div id="showHighScores">
+          <h1>Top 5 High Scores</h1>
+          <div id="myHighScores">
+
+          </div>
+        </div>
+      </div>
+    </div>
 
       <script>
       
@@ -106,7 +147,7 @@
     var timeLeft=document.getElementById("timeLeft");
     timeLeft.innerHTML=0;
 
-  //this is the viewhighscore link
+  //this is the view highscore link
     var viewHighScores=document.getElementById("viewHighScores");
     viewHighScores.addEventListener("click", showTop5HighScores);
 
@@ -117,8 +158,10 @@
     var myHighScores = document.getElementById("myHighScores");
     var quizText = document.getElementById("quizText");
     quizText.style.display='none';
+    
     var highScore = document.getElementById("highScore");
-    highScore.style.display='none';
+     highScore.style.display='none';
+
     var showHighScores = document.getElementById("showHighScores");
     showHighScores.style.display='none';
     var yourScore = document.getElementById("yourScore");
